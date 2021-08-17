@@ -18,9 +18,14 @@
             console.log('Desconectado al servidor');    
         });
 
-        socketCliente.emit('mensaje', {nombre: 'Ricardo'});
-        socketCliente.on('mensaje', function(payload){
+     //   socketCliente.emit('mensaje', {nombre: 'Ricardo'});
+        socketCliente.on('nuevo-mensaje', function(payload){
             console.log('Escuchando', payload);   
+        });
+
+        socketCliente.on('active-Bands', function(bands){
+            console.clear();
+            console.table(bands);   
         });
     </script>
 </body>
